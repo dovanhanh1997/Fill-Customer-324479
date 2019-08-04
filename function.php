@@ -1,16 +1,14 @@
 <?php
-function searchByDate($customers, $from, $to)
-{
-    if (empty($from) && empty($to)) {
-        return $customers;
-    };
+function searchByDate($customerList,$from,$to){
+    if (empty($from) && empty($to)){
+        return $customerList;
+    }
 
-    $resultArray = [];
-    foreach ($customers as $customer) {
-        if ($from <= $customer['day_of_birth'] && $customer['day_of_birth'] <= $to) {
-            array_push($resultArray, $customer);
+    $array = [];
+    foreach ($customerList as $value) {
+        if ($from <= $value['day_of_birth'] && $value['day_of_birth'] <= $to){
+            array_push($array,$value);
         }
     }
-    return $resultArray;
+    return $array;
 }
-
