@@ -5,12 +5,11 @@ function searchByDate($arrayList, $from, $to)
         return $arrayList;
     }
 
-    $array = [];
-    foreach ($arrayList as $value):
-        if ($from <= $value['day_of_birth'] && $value['day_of_birth'] <= $to) {
-            array_push($array, $value);
+    $array = array();
+    foreach ($arrayList as $customer) {
+        if ($from <= $customer['day_of_birth'] && $customer['day_of_birth'] <= $to) {
+            array_push($array, $customer);
         }
-    endforeach;
+    }
     return $array;
 }
-
